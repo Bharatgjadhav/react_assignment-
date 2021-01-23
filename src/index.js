@@ -1,54 +1,79 @@
-import { computeHeadingLevel } from "@testing-library/react"
-import React from "react"
+import React, {useState} from "react"
 import ReactDOM from "react-dom"
-
-/* const App=()=>{
-  const course="half stack application development"
-  const part1="fundamentals of react"
-  const ex1=10
-  const part2="using props to pass data"
-  const ex2=7
-  const part3="state of a component"
-  const ex3=14
-
-  return(
+/* 
+const Hello = (props) => {
+    const bornYear = () => {
+      const yearNow = new Date().getFullYear()
+      return yearNow - props.age
+    }
+    return (
+      <div>
+        <p>
+          Hello {props.name}, you are {props.age} years old
+        </p>
+        <p>So you were probably born in {bornYear()}</p>
+      </div>
+    )
+    }
+const App = () => {
+  const name = 'Peter'
+  const age = 10
+  return (
     <div>
-      <h1>
-        {course}
-      </h1>
-      <p>
-        {part1} {ex1}
-      </p>
-      <p>
-        {part2} {ex2}
-      </p>
-      <p>
-        {part3} {ex3}
-      </p>
-      <p>Number of exercise {ex1+ex2+ex3}</p>
+      <h1>Greetings</h1>
+      <Hello name="Maya" age={26 + 10} />
+      <Hello name={name} age={age} />
+      <Hello name="vasant" age={24}/>
+      <Hello name="vishwanath" age={23}/>
     </div>
   )
+} */ 
+  //const Hello = (props) => {
+  /* const name = props.name
+  const age = props.age */
+  //const {name,age}=props// destructuring 
+
+  /* const bornYear = () => new Date().getFullYear() - age */
+ /*  const bornYear=()=>{return new Date().getFullYear()- age}
+
+  return (
+    <div>
+      <p>Hello {name}, you are {age} years old</p>
+      <p>So you were probably born in {bornYear()}</p>
+    </div>
+  )
+} */
+/* const Hello = ({ name,age})=>{
+const bornYear=()=>new Date().getFullYear -age
+return(
+  <div>
+  <p> Hello {name}, you are {age} years old </p>
+  <p>So you were propabaly born in {bornYear()}</p>
+  </div>
+)
 }
-
- */
-
-const App=()=>{
-  const course="half stack development"
-  const parts=[
-   {
-    name :"fundamentals of react",
-    exercises : 10
-  },
-
-  {
-    name:"using props to pass data",
-    exercise:7
-  },
-
-  {
-    name:"state of a compopnet ",
-    exercise:14
+const App = () => {
+  const name = 'Peter'
+  const age = 10
+  return (
+    <div>
+      <h1>Greetings</h1>
+      <Hello name="Maya" age={26 + 10} />
+      <Hello name={name} age={age} />
+      <Hello name="vasant" age={24}/>
+      <Hello name="adarsh" age={23}/>
+    </div>
+  )
   }
-  ]
+ReactDOM.render(<App/>, document.getElementById("root")) */
+const App=()=>{
+  const [counter,setCounter]=useState(0)
+  setTimeout(
+    ()=>setCounter(counter+1),100
+  )
+  return (
+    <div>{counter}</div>
+  )
+
 }
-ReactDOM.render(<App/>, document.getElementById("root"))
+ReactDOM.render(<App/>,document.getElementById("root"))
